@@ -36,9 +36,12 @@
   hosts: deploy
   become: yes
   become_method: sudo
-  gather_facts: yes
+  gather_facts: no
   tasks:
 
+    - name: vars check
+      debug: msg="{{ dep_version }}  {{ssh_key_pwd}}"
+      
     - name: Install apache
       apt:
        state: present
