@@ -5,7 +5,7 @@
       <id>nexus</id>
       <mirrorOf>*</mirrorOf>
       <!--url>http://git.7579433.ru:8080/repository/maven-central/</url-->
-      <url>http://git.7579433.ru:8080/repository/maven-public/</url>
+      <url>http://git.7579433.ru:8081/repository/maven-public/</url>
     </mirror>
   </mirrors>
   <profiles>

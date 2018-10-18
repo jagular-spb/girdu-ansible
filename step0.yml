@@ -43,10 +43,14 @@
    - web
    
   tasks:
-    - name: vars check
-      debug: msg="{{ dep_version }}  {{ssh_key_pwd}}"
+    - name: cleanup stage 0
+      file:
+       state: absent
+       path: "/tmp/project"
 
     - name: Git colne repo  
+      become: yes
+      become_user: "{{user_name_to_add}}"
       git:
        repo: "{{mvn_repo_url}}"
        dest: "/tmp/project"
@@ -54,8 +58,13 @@
        update: yes
        version: "{{mvn_repo_branch}}"
 
-    - name: Mvn verify
-    
+    - name: Mvn validate
+      become: yes
+      become_user: "{{user_name_to_add}}"
+      command: "mvn -f /tmp/project/main-app/pom.xml clean validate"
+
     - name: Mvn deploy
-    
-       
+      become: yes
+      become_user: "{{user_name_to_add}}"
+      command: "mvn -f /tmp/project/main-app/pom.xml clean deploy"
+
