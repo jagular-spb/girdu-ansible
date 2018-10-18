@@ -37,6 +37,8 @@
   become: yes
   become_method: sudo
   gather_facts: no
+  roles:
+   - common
   tasks:
 
     - name: vars check

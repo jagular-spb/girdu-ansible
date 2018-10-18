@@ -1,0 +1,17 @@
+---
+- name: Make .ssh dir
+  file:
+   state: directory
+   mode: u=rwx,g=rx,o=rx
+   group: alice
+   owner: alice
+   path: /home/alice/.ssh
+
+- name: Copy pub key
+  copy:
+   src: id_alice.pub
+   dest: /home/alice/.ssh/authorized_keys
+   mode: u+rw,g-rwx,o-rwx
+   group: alice
+   owner: alice
+
