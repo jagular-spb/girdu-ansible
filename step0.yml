@@ -43,7 +43,19 @@
    - web
    
   tasks:
-  
     - name: vars check
       debug: msg="{{ dep_version }}  {{ssh_key_pwd}}"
-      
+
+    - name: Git colne repo  
+      git:
+       repo: "{{mvn_repo_url}}"
+       dest: "/tmp/project"
+       clone: yes
+       update: yes
+       version: "{{mvn_repo_branch}}"
+
+    - name: Mvn verify
+    
+    - name: Mvn deploy
+    
+       
