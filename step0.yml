@@ -39,27 +39,11 @@
   gather_facts: no
   roles:
    - common
+   - deployment
+   - web
+   
   tasks:
-
+  
     - name: vars check
       debug: msg="{{ dep_version }}  {{ssh_key_pwd}}"
       
-    - name: Install apache
-      apt:
-       state: present
-       name: apache2
-       update_cache: yes
-
-    - name: Run apache
-      service:
-        name: apache2
-        state: started
-        enabled: yes
-
-    - name: Change index
-      copy:  
-       content: "<html><head><title>GCE Test</title></head><body>Welcome to {{ansible_hostname|quote}}</body></html>"
-       dest: "/var/www/html/index.html"
-
-    - name: Kernel
-      debug: msg="{{ ansible_lsb.description }} {{ ansible_kernel }}"

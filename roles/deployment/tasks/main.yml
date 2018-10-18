@@ -1,0 +1,4 @@
+---
+- name: install git
+  import_tasks: git.yml
+
