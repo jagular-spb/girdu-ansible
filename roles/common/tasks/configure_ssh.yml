@@ -3,15 +3,15 @@
   file:
    state: directory
    mode: u=rwx,g=rx,o=rx
-   group: alice
-   owner: alice
-   path: /home/alice/.ssh
+   group: "{{user_name_to_add}}"
+   owner: "{{user_name_to_add}}"
+   path: "/home/{{user_name_to_add}}/.ssh"
 
 - name: Copy pub key
   copy:
-   src: id_alice.pub
-   dest: /home/alice/.ssh/authorized_keys
+   src: "id_{{user_name_to_add}}.pub"
+   dest: "/home/{{user_name_to_add}}/.ssh/authorized_keys"
    mode: u+rw,g-rwx,o-rwx
-   group: alice
-   owner: alice
+   group: "{{user_name_to_add}}"
+   owner: "{{user_name_to_add}}"
 
