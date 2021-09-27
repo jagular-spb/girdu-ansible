@@ -6,4 +6,5 @@
      - deltarpm
      - screen
     update_cache: yes
+  when: packages|default(false)
   tags: packages
