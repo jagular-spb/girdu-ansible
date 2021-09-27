@@ -12,4 +12,3 @@
     - name: Update yum cache
       yum:
         update_cache: yes
-      tags: [ never, packages ]
