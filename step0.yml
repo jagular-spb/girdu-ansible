@@ -1,4 +1,4 @@
-##
+--
 - name: Play with Squid
   hosts: squid
   ansible_ssh_user: jagular
