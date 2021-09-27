@@ -6,3 +6,4 @@
      - deltarpm
      - screen
     update_cache: yes
+  tags: packages
