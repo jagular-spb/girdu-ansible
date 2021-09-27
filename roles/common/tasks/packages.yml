@@ -2,5 +2,7 @@
 - name: Install deltarpm
   yum:
     state: present
-    name: deltarpm
+    name:
+     - deltarpm
+     - screen
     update_cache: yes
