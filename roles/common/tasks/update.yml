@@ -1,6 +1,5 @@
 ---
 - name: Update all packages
-  tags: [never, update_squids]
   yum:
     name: '*'
     state: latest
