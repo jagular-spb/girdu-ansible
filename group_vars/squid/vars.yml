@@ -1,0 +1,2 @@
+---
+ssh_key_pwd: "{{ vault_ssh_key_pwd }}"
