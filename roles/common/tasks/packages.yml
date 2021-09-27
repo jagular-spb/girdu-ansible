@@ -1,5 +1,5 @@
 ---
-- name: Install deltarpm
+- name: Install packages
   yum:
     state: present
     name:
