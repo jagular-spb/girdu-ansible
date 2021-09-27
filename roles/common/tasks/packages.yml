@@ -5,4 +5,5 @@
     name:
      - deltarpm
      - screen
+     - yum-utils
     update_cache: yes
