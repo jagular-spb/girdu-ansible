@@ -1,2 +1,3 @@
 ---
 ssh_key_pwd: "{{ vault_ssh_key_pwd }}"
+sudo_pwd: "{{ vault_sudo_pwd }}"
