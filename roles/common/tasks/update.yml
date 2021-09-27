@@ -5,7 +5,6 @@
         name: '*'
         state: latest
       register: update_task_result
-      when: update|default(false)
     - name: Reboot immediately if there was a change.
       shell: "sleep 5 && reboot"
       async: 1
