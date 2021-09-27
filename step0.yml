@@ -1,4 +1,5 @@
---
+#
+---
 - name: Play with Squid
   hosts: squid
   become: yes
