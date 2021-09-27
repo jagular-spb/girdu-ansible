@@ -9,31 +9,6 @@
     - common
 
   tasks:
-    - name: Update all packages
+    - name: Update yum cache
       yum:
-        name: '*'
-        state: latest
-      register: update_task_result
-
-
-    - name: Reboot immediately if there was a change.
-      shell: "sleep 5 && reboot"
-      async: 1
-      poll: 0
-      when: update_task_result
-
-    - name: Wait for the reboot to complete if there was a change.
-      wait_for_connection:
-        connect_timeout: 20
-        sleep: 5
-        delay: 5
-        timeout: 300
-      when: update_task_result
-
-    - name: Run ipro after reboot.
-      become: yes
-      become_user: root
-      command:
-        chdir: "/root/fw"
-        cmd: "./ipro.sh"
-      when: update_task_result
+        update_cache: yes
