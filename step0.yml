@@ -1,13 +1,11 @@
 --
 - name: Play with Squid
   hosts: squid
-  ansible_ssh_user: jagular
   become: yes
   become_method: sudo
   gather_facts: yes
   roles:
    - common
-   
   tasks:
     - name: Upgrade all packages
       yum:
