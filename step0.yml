@@ -1,70 +1,14 @@
-- name: Compute Engine Instance Examples
-  hosts: localhost
-  vars:
-    service_account_email: "terraform@ef-tf-admin.iam.gserviceaccount.com"
-    credentials_file: "/Users/efisher/.config/gcloud/efisher-terraform-admin.json"
-    project_id: "ef-tf-compute"
-    egcp_zone: us-central1-a
-    egce_names: tf-compute-lb-0,tf-compute-lb-1,tf-compute-lb-2
-    
-  tasks:
-    - name: create multiple instances
-      gce:
-        instance_names: "{{ egce_names }}"
-        zone: "{{ egcp_zone }}"
-        machine_type: f1-micro
-        image: ubuntu-1604-xenial-v20170328
-        state: present
-        service_account_email: "{{ service_account_email }}"
-        credentials_file: "{{ credentials_file }}"
-        project_id: "{{ project_id }}"
-        metadata : '{ "startup-script":"apt-get update", "sshKeys":"jagular_spb:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCiyEXyO9R5SUQIRq6tCge5rLitw+LdJME8FLsmd6vtcKxGs4i5bI/SgLIEjs04ZZ4aKApGYrIotShEtUcC5trBjNqoAuzyKGHitt8YYz4KG61FBIQMpoM3McqNIr0xqfk+UR7SN5Lj+YiOtxIVxOMDFaOD7mMjS+4YNmzLzr06TmQsXJbIZrTZVN5xaeg2lYSWRspZq3cZX9a4OtY+FcCDxj27WrCfebZQYawE5RYcrM6Bp9GwjoXF7gkEFJp54EZ08yFnk+1ZbPasn2h5Lx7T53iG5v3i0Cpn4BSkvAkoSe7yYm0gs/fGNILtpT/9RDqhs/RBCeaMsqlySfQud/MJ jagular_spb"}'
-      register: gce
-
-    - name: Save host data
-      add_host:
-        hostname: "{{ item.name }}"
-        ansible_ssh_host: "{{ item.public_ip }}"
-        groupname: deploy
-        ansible_ssh_user: jagular_spb
-        ansible_ssh_private_key_file: "~/.ssh/id_ef_gd"
-        ansible_paramiko_host_key_checking: false
-      with_items: "{{ gce.instance_data }}"
-
 ##
-- name: Play with inmemory-inventory
-  hosts: deploy
+- name: Play with Squid
+  hosts: squid
   become: yes
   become_method: sudo
   gather_facts: no
   roles:
    - common
-   - deployment
-   - web
    
   tasks:
-    - name: cleanup stage 0
-      file:
-       state: absent
-       path: "/tmp/project"
-
-    - name: Git colne repo  
-      become: yes
-      become_user: "{{user_name_to_add}}"
-      git:
-       repo: "{{mvn_repo_url}}"
-       dest: "/tmp/project"
-       clone: yes
-       update: yes
-       version: "{{mvn_repo_branch}}"
-
-    - name: Mvn validate
-      become: yes
-      become_user: "{{user_name_to_add}}"
-      command: "mvn -f /tmp/project/main-app/pom.xml clean validate"
-
-    - name: Mvn deploy
-      become: yes
-      become_user: "{{user_name_to_add}}"
-      command: "mvn -f /tmp/project/main-app/pom.xml clean deploy"
-
+    - name: Upgrade all packages
+      yum:
+       name: '*'
+       state: latest
