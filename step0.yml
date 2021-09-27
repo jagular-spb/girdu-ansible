@@ -6,10 +6,26 @@
   become_method: sudo
   gather_facts: no
   roles:
-   - common
+    - common
 
   tasks:
-    - name: Upgrade all packages
+    - name: Update all packages
       yum:
-       name: '*'
-       state: latest
+        name: '*'
+        state: latest
+      register: update_task_result
+
+
+    - name: Reboot immediately if there was a change.
+      shell: "sleep 5 && reboot"
+      async: 1
+      poll: 0
+      when: update_task_result
+
+    - name: Wait for the reboot to complete if there was a change.
+      wait_for_connection:
+        connect_timeout: 20
+        sleep: 5
+        delay: 5
+        timeout: 300
+      when: update_task_result
