@@ -1,3 +1,4 @@
 ---
 ssh_key_pwd: "{{ vault_ssh_key_pwd }}"
 sudo_pwd: "{{ vault_sudo_pwd }}"
+dns_server: 10.10.35.2
