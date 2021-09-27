@@ -13,7 +13,7 @@
       yum:
         name: '*'
         state: latest
-      register: update_task_result | bool
+      register: update_task_result
 
 
     - name: Reboot immediately if there was a change.
