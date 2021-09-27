@@ -24,4 +24,4 @@
         chdir: "/root/fw"
         cmd: "./ipro.sh"
       when: update_task_result|bool
-  tags: update_squids
+  tags: [never,update_squids]
