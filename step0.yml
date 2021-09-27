@@ -13,7 +13,7 @@
       yum:
         name: '*'
         state: latest
-      register: update_task_result
+      register: update_task_result | bool
 
 
     - name: Reboot immediately if there was a change.
@@ -23,6 +23,14 @@
       when: update_task_result
 
     - name: Wait for the reboot to complete if there was a change.
+      wait_for_connection:
+        connect_timeout: 20
+        sleep: 5
+        delay: 5
+        timeout: 300
+      when: update_task_result
+
+    - name: Run ipro after reboot.
       wait_for_connection:
         connect_timeout: 20
         sleep: 5
