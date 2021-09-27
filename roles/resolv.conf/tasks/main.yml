@@ -24,3 +24,4 @@
     backup: yes
   notify:
     - reload NetworkManager
+    - restart squid

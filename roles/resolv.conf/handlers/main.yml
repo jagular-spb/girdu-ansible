@@ -3,3 +3,7 @@
   service:
     name: NetworkManager
     state: reloaded
+- name: restart squid
+  service:
+    name: squid
+    state: restarted
