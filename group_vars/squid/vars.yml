@@ -1,2 +1,2 @@
 --
-ssh_key_pwd: "{{ vault_ssh_key_pwd }}"
+ansible_ssh_user: jagular
