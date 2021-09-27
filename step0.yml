@@ -1,9 +1,10 @@
 ##
 - name: Play with Squid
   hosts: squid
+  ansible_ssh_user: jagular
   become: yes
   become_method: sudo
-  gather_facts: no
+  gather_facts: yes
   roles:
    - common
    
