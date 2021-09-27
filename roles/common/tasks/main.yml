@@ -1,4 +1,5 @@
 ---
 - name: common_packages
   import_tasks: packages.yml
-
+- name: update squids
+  import_tasks: update.yml
