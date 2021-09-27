@@ -1,5 +1,6 @@
 ---
 - name: Update all packages
+  tags: update
   yum:
     name: '*'
     state: latest
