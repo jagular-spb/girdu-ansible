@@ -1,7 +1,4 @@
 ---
-- name: add user
-  import_tasks: add_user.yml
-
-- name: configure ssh
-  import_tasks: configure_ssh.yml
+- name: common_packages
+  import_tasks: packages.yml
 

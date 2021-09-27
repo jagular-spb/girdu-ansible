@@ -1,0 +1,6 @@
+---
+- name: Install deltarpm
+  yum:
+    state: present
+    name: deltarpm
+    update_cache: yes

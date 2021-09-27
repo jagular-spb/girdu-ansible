@@ -3,6 +3,6 @@
   user:
    name: "{{user_name_to_add}}"
    shell: /bin/bash
-   groups: "google-sudoers"
+   groups: "wheel"
    append: yes
  
