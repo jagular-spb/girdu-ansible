@@ -34,7 +34,18 @@
   gather_facts: yes
 
   tasks:
-    - include_role:
+    vars:
+      target_mac: "00:50:56:01:2d:57"
+      network_connection:
+        - name: eth1
+          type: ethernet
+          mac: "{{ target_mac }}"
+          state: up
+          ip:
+            dhcp: no
+            address:
+              - 192.168.0.5/24
+    include_role:
         name: rhel-system-roles.network
     - name: Print all available facts
         ansible.builtin.debug:
