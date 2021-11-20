@@ -43,6 +43,11 @@
   #           dhcp: no
   #           address:
   #             -  192.168.0.5/24
+  tasks:
+      - name: Print all available facts
+        ansible.builtin.debug:
+          var: ansible_facts
+
   roles:
     - rhel-system-roles.network
 
