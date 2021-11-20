@@ -1,18 +1,18 @@
 #
 ---
-- name: Play with Squid
-  hosts: squid
-  become: yes
-  become_method: sudo
-  gather_facts: yes
-  roles:
-    - resolv.conf
-    - common
-
-  tasks:
-    - name: Update yum cache
-      yum:
-        update_cache: yes
+#- name: Play with Squid
+#  hosts: squid
+#  become: yes
+#  become_method: sudo
+#  gather_facts: yes
+#  roles:
+#    - resolv.conf
+#    - common
+#
+#  tasks:
+#    - name: Update yum cache
+#      yum:
+#        update_cache: yes
 
 #    - name: Print all available facts
 #      ansible.builtin.debug:
@@ -33,11 +33,11 @@
   become_method: sudo
   gather_facts: yes
   vars:
-    target_mac: “52:54:00:fe:2f:b8”
+    target_mac: "52:54:00:fe:2f:b8"
     network_connection:
       - name: static-network
         type: ethernet
-        mac: “{{ target_mac }}”
+        mac: "{{ target_mac }}"
         state: up
         ip:
           dhcp: no
