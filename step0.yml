@@ -31,6 +31,7 @@
   hosts: squid1.anysrv.local
   become: yes
   become_method: sudo
+  gather_facts: yes
   #  vars:
   #    target_mac: “52:54:00:fe:2f:b8”
   #    network_connection:
