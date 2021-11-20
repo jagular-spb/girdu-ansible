@@ -46,4 +46,4 @@
             address:
               - 192.168.0.5/24
     include_role:
-        name: rhel-system-roles.network
+      name: rhel-system-roles.network
