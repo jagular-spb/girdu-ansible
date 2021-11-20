@@ -35,7 +35,7 @@
   vars:
     target_mac: "00:50:56:01:2d:57"
     network_connection:
-      - name: static-network
+      - name: eth1
         type: ethernet
         mac: "{{ target_mac }}"
         state: up
