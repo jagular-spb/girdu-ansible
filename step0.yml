@@ -36,7 +36,6 @@
   tasks:
     - include_role:
         name: rhel-system-roles.network
-
     - name: Print all available facts
         ansible.builtin.debug:
           var: ansible_facts.target_mac
