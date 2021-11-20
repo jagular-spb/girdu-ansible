@@ -46,7 +46,7 @@
   tasks:
     - name: Print all available facts
       ansible.builtin.debug:
-        var: ansible_facts.network_connections
+        var: ansible_facts.target_mac
 
   roles:
     - rhel-system-roles.network
