@@ -18,14 +18,14 @@
 #      ansible.builtin.debug:
 #        var: ansible_facts
 
-- name: playbook for starting and enabling the NetworkManager
-  hosts: squid1.anysrv.local
-  tasks:
-    - name: start the service
-      service:
-        name: NetworkManager
-        state: started
-        enabled: true
+#- name: playbook for starting and enabling the NetworkManager
+#  hosts: squid1.anysrv.local
+#  tasks:
+#    - name: start the service
+#      service:
+#        name: NetworkManager
+#        state: started
+#        enabled: true
 
 - name: playbook for configuring second interface
   hosts: squid1.anysrv.local
