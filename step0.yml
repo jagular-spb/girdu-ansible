@@ -36,7 +36,7 @@
   tasks:
 
     - include_role:
-       name: rhel-system-roles.network
+        name: rhel-system-roles.network
       vars:
         target_mac: "00:50:56:01:2d:57"
         network_connection:
