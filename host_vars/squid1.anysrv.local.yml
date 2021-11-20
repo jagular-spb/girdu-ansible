@@ -1,0 +1,10 @@
+target_mac: "52:54:00:fe:2f:b8"
+network_connection:
+  -  name: static-network
+     type: ethernet
+     mac: "{{ target_mac }}"
+     state: up
+     ip :
+       dhcp: no
+       address:
+         -  192.168.0.5/24
