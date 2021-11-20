@@ -1,4 +1,4 @@
-target_mac: "52:54:00:fe:2f:b8"
+target_mac: "00:50:56:01:2d:57"
 network_connection:
   -  name: static-network
      type: ethernet
