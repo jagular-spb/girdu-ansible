@@ -21,25 +21,25 @@
 - name: playbook for starting and enabling the NetworkManager
   hosts: squid1.anysrv.local
   tasks:
-    -    Name: start the service
-         service:
-           name: NetworkManager
-           state: started
-           enabled: true
+    - name: start the service
+      service:
+        name: NetworkManager
+        state: started
+        enabled: true
 
 - name: playbook for configuring second interface
   hosts: squid1.anysrv.local
-#  vars:
-#    target_mac: “52:54:00:fe:2f:b8”
-#    network_connection:
-#      -  name: static-network
-#         type: ethernet
-#         mac: “{{ target_mac }}”
-#         state: up
-#         ip :
-#           dhcp: no
-#           address:
-#             -  192.168.0.5/24
+  #  vars:
+  #    target_mac: “52:54:00:fe:2f:b8”
+  #    network_connection:
+  #      -  name: static-network
+  #         type: ethernet
+  #         mac: “{{ target_mac }}”
+  #         state: up
+  #         ip :
+  #           dhcp: no
+  #           address:
+  #             -  192.168.0.5/24
   roles:
-    -    rhel-system-roles.network
+    - rhel-system-roles.network
 
