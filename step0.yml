@@ -34,7 +34,6 @@
   gather_facts: yes
 
   tasks:
-
     - include_role:
         name: rhel-system-roles.network
       vars:
