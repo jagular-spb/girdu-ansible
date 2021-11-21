@@ -1,18 +1,18 @@
 #
 ---
-#- name: Play with Squid
-#  hosts: squid
-#  become: yes
-#  become_method: sudo
-#  gather_facts: yes
-#  roles:
-#    - resolv.conf
-#    - common
-#
-#  tasks:
-#    - name: Update yum cache
-#      yum:
-#        update_cache: yes
+- name: Play with Squid
+  hosts: squid
+  become: yes
+  become_method: sudo
+  gather_facts: yes
+  roles:
+    - resolv.conf
+    - common
+
+  tasks:
+    - name: Update yum cache
+      yum:
+        update_cache: yes
 
 #    - name: Print all available facts
 #      ansible.builtin.debug:
@@ -27,23 +27,23 @@
 #        state: started
 #        enabled: true
 
-- name: playbook for configuring second interface
-  hosts: squid1.anysrv.local
-  become: yes
-  become_method: sudo
-  gather_facts: yes
-
-  tasks:
-    - include_role:
-        name: rhel-system-roles.network
-      vars:
-        target_mac: "00:50:56:01:2d:57"
-        network_connection:
-          - name: eth1
-            type: ethernet
-            mac: "{{ target_mac }}"
-            state: up
-            ip:
-              dhcp: no
-              address:
-                - 192.168.0.5/24
+#- name: playbook for configuring second interface
+#  hosts: squid1.anysrv.local
+#  become: yes
+#  become_method: sudo
+#  gather_facts: yes
+#
+#  tasks:
+#    - include_role:
+#        name: rhel-system-roles.network
+#      vars:
+#        target_mac: "00:50:56:01:2d:57"
+#        network_connection:
+#          - name: eth1
+#            type: ethernet
+#            mac: "{{ target_mac }}"
+#            state: up
+#            ip:
+#              dhcp: no
+#              address:
+#                - 192.168.0.5/24
