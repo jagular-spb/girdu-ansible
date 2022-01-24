@@ -1,0 +1,16 @@
+---
+- block:
+    - name: Update all packages
+      
+    - name: Run ipro.
+      become: yes
+      become_user: root
+      command:
+        chdir: "/root/fw"
+        cmd: "./ipro.sh"
+    
+    - name: restart squid
+      service:
+        name: squid
+        state: restarted
+           
