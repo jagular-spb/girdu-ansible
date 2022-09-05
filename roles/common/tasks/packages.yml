@@ -6,4 +6,5 @@
      - deltarpm
      - screen
      - yum-utils
+     - NetworkManager-dispatcher-routing-rules
     update_cache: yes

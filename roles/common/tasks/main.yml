@@ -1,12 +1,17 @@
 ---
 - name: set_hostname
   import_tasks: hostname.yml
+  tags: [never, host ]
+
 - name: common_packages
   import_tasks: packages.yml
   tags: [ never, packages ]
 - name: update
   import_tasks: update.yml
-  tags: [ update ]
+  tags: [never,  update ]
 - name: restart
   import_tasks: do_some_restart.yml
-  tags: [ restart ]
+  tags: [ never, restart ]
+- name: reboot
+  import_tasks: reboot.yml
+  tags: [ reboot_me ]

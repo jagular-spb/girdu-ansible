@@ -6,3 +6,4 @@ squid[1:7].anysrv.local
 ansible_ssh_user=jagular
 ansible_become_pass= {{ sudo_pwd }}
 ask_pass= {{ ssh_key_pwd }}
+reboot_me_bool=False
