@@ -9,7 +9,7 @@
     network_connection:
       -  name: "ens256"
          type: ethernet
-         mac: “{{ target_mac }}”
+         mac: "{{ target_mac }}"
          state: up
          ip :
            dhcp: no
