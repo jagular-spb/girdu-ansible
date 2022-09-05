@@ -6,7 +6,7 @@
     target_mac: "00:50:56:01:4e:d0"
     network_provider: "initscripts"
     network_connection:
-      -  name: "ens256"
+      -  name: ens256
          type: ethernet
          mac: "{{ target_mac }}"
          interface_name: "ens256"
