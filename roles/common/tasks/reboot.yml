@@ -1,0 +1,32 @@
+---
+- block:
+    #- name: Register Reboot immediately.
+    #  register: reboot_me
+    #  stat: path=/var/tmp/reboot_requried get_md5=0
+
+
+    - name: Reboot immediately Msg.
+      debug:
+       msg: "Got {{ reboot_me_bool| default (false)| bool }}"
+
+    - name: Reboot immediately.
+      shell: "sleep 5 && reboot"
+      async: 1
+      poll: 0
+      when: reboot_me_bool| default (false) | bool
+      
+    - name: Wait for the reboot to complete if there was a change.
+      wait_for_connection:
+        connect_timeout: 20
+        sleep: 5
+        delay: 5
+        timeout: 300
+      when: reboot_me_bool| default (false) | bool
+      
+    - name: Run ipro after reboot.
+      become: yes
+      become_user: root
+      command:
+        chdir: "/root/fw"
+        cmd: "./ipro.sh"
+      when: reboot_me_bool| default (false) | bool
