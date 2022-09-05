@@ -2,7 +2,6 @@
   become: yes
   become_user: root
   hosts: squid4.anysrv.local
-
   vars:
     target_mac: "00:50:56:01:4e:d0"
     network_provider: "initscripts"
@@ -10,6 +9,7 @@
       -  name: "ens256"
          type: ethernet
          mac: "{{ target_mac }}"
+         interface_name: "ens256"
          state: up
          ip :
            dhcp: no
