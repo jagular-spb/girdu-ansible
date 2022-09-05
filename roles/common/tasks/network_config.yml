@@ -10,7 +10,7 @@
          type: ethernet
          mac: "{{ target_mac }}"
          interface_name: "ens256"
-         state: up
+         state: down
          ip :
            dhcp: no
            address:
