@@ -2,6 +2,7 @@
   become: yes
   become_user: root
   hosts: squid4.anysrv.local
+  network_provider: initscripts
   vars:
     target_mac: "00:50:56:01:4e:d0"
     network_connection:
