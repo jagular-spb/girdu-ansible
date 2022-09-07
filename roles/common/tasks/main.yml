@@ -8,7 +8,7 @@
   tags: [ never, packages ]
 - name: update
   import_tasks: update.yml
-  tags: [update ]
+  tags: [update_me ]
 - name: restart
   import_tasks: do_some_restart.yml
   tags: [ never, restart ]

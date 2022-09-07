@@ -1,15 +1,22 @@
 ---
 - block:
+    - name: Update immediately Msg.
+      debug:
+        msg: "Got {{ update_me_bool | bool }}"
+
     - name: Update all packages
       yum:
         name: '*'
         state: latest
       register: update_task_result
+      when: update_me_bool| default (false) | bool
+
     - name: Reboot immediately if there was a change.
       shell: "sleep 5 && reboot"
       async: 1
       poll: 0
       when: update_task_result|bool
+
     - name: Wait for the reboot to complete if there was a change.
       wait_for_connection:
         connect_timeout: 20
