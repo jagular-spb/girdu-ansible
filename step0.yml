@@ -1,6 +1,6 @@
 #
 ---
-# tasks file for MY_ROLE
+
 - name: Install requirements
   local_action: command ansible-galaxy install -r requirements.yml -p /usr/share/ansible/
 
