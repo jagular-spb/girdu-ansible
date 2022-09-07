@@ -1,13 +1,13 @@
 ---
 - block:
-    #- name: Register Reboot immediately.
-    #  register: reboot_me
-    #  stat: path=/var/tmp/reboot_requried get_md5=0
+    - name: Register Reboot immediately.
+      register: reboot_me
+      stat: path=/var/tmp/reboot_requried get_md5=0
 
 
     - name: Reboot immediately Msg.
       debug:
-       msg: "Got {{ reboot_me_bool| default (false)| bool }}"
+       msg: "Got {{ reboot_me_bool | bool }}"
 
     - name: Reboot immediately.
       shell: "sleep 5 && reboot"
