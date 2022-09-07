@@ -1,8 +1,8 @@
 #
 ---
 
-- name: Install requirements
-  local_action: ansible-galaxy install -r requirements.yml -p /usr/share/ansible/
+#- name: Install requirements
+#  local_action: ansible-galaxy install -r requirements.yml -p /usr/share/ansible/
 
 - name: Play with Squid
   hosts: squid
