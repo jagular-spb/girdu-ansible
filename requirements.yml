@@ -1,0 +1,3 @@
+# Install a role from GitHub
+- name: linux-system-roles.network
+  src: https://github.com/linux-system-roles/network
