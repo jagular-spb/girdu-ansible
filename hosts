@@ -9,4 +9,4 @@ ask_pass= {{ ssh_key_pwd }}
 reboot_me_bool=False
 update_me_bool=False
 install_pkg_bool=True
-ansible_python_interpreter= /usr/bin/python3
+#ansible_python_interpreter= /usr/bin/python3
