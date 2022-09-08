@@ -27,7 +27,7 @@
          persistent_state: present
          state: up
          ip :
-           ipv6_disabled: yes
+           auto6: no
            auto_gateway: no
            address:
              - 37.18.89.83/24
