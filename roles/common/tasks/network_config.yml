@@ -34,19 +34,19 @@
           mode: active-backup
           miimon: 110
 
-      # add an ethernet profile to the bond
-      - name: member1
-        state: up
-        type: ethernet
-        interface_name: enp1s0
-        controller: bond0
-
-      # add a second ethernet profile to the bond
-      - name: member2
-        state: up
-        type: ethernet
-        interface_name: enp10s0
-        controller: bond0
+#      # add an ethernet profile to the bond
+#      - name: member1
+#        state: up
+#        type: ethernet
+#        interface_name: enp1s0
+#        controller: bond0
+#
+#      # add a second ethernet profile to the bond
+#      - name: member2
+#        state: up
+#        type: ethernet
+#        interface_name: enp10s0
+#        controller: bond0
 
   roles:
     -    linux-system-roles.network
