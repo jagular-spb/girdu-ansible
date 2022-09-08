@@ -33,7 +33,7 @@
              - 37.18.89.83/24
       # Specify the bond profile
       - name: bond0
-        state: up
+        state: absent
         type: bond
         interface_name: bond0
         # ip configuration (optional)
