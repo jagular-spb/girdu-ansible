@@ -2,35 +2,35 @@
   become: yes
   become_user: root
   hosts: squid4.anysrv.local
-  #  vars:
-  #    target_mac: "00:50:56:01:4e:d0"
-  #    network_provider: "initscripts"
-  #    network_connection:
-  #      -  name: ens256
-  #         type: ethernet
-  #         mac: 00:50:56:01:4e:d0
-  #         interface_name: ens256
-  #         persistent_state: present
-  #         state: up
-  #         ip :
-  #           dhcp: no
-  #           gateway4: 37.18.89.1
-  #           address:
-  #             -  37.18.89.83/24
+#  vars:
+#    target_mac: "00:50:56:01:4e:d0"
+#    network_provider: "initscripts"
+#    network_connection:
+#      -  name: ens256
+#         type: ethernet
+#         mac: 00:50:56:01:4e:d0
+#         interface_name: ens256
+#         persistent_state: present
+#         state: up
+#         ip :
+#           dhcp: no
+#           gateway4: 37.18.89.1
+#           address:
+#             -  37.18.89.83/24
 
   vars:
     network_connections:
-      - name: ens256
-        type: ethernet
-        mac: 00:50:56:01:4e:d0
-        interface_name: ens256
-        persistent_state: present
-        state: up
-        ip:
-          dhcp: no
-          gateway4: 37.18.89.1
-          address:
-            - 37.18.89.83/24
+      -  name: ens256
+         type: ethernet
+         mac: 00:50:56:01:4e:d0
+         interface_name: ens256
+         persistent_state: present
+         state: up
+         ip :
+           dhcp: no
+           gateway4: 37.18.89.1
+           address:
+             - 37.18.89.83/24
       # Specify the bond profile
       - name: bond0
         state: up
@@ -45,19 +45,19 @@
           mode: active-backup
           miimon: 110
 
-  #      # add an ethernet profile to the bond
-  #      - name: member1
-  #        state: up
-  #        type: ethernet
-  #        interface_name: enp1s0
-  #        controller: bond0
-  #
-  #      # add a second ethernet profile to the bond
-  #      - name: member2
-  #        state: up
-  #        type: ethernet
-  #        interface_name: enp10s0
-  #        controller: bond0
+#      # add an ethernet profile to the bond
+#      - name: member1
+#        state: up
+#        type: ethernet
+#        interface_name: enp1s0
+#        controller: bond0
+#
+#      # add a second ethernet profile to the bond
+#      - name: member2
+#        state: up
+#        type: ethernet
+#        interface_name: enp10s0
+#        controller: bond0
 
   roles:
-    - linux-system-roles.network
+    -    linux-system-roles.network
