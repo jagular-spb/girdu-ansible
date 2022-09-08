@@ -9,4 +9,4 @@
      - NetworkManager-dispatcher-routing-rules
      - python36
     update_cache: yes
-    when: install_pkg_bool| default (false) | bool
+  when: install_pkg_bool| default (false) | bool
