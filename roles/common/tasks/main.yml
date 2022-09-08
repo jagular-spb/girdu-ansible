@@ -5,7 +5,7 @@
 
 - name: common_packages
   import_tasks: packages.yml
-  tags: [ never, packages ]
+  tags: [ packages ]
 - name: update
   import_tasks: update.yml
   tags: [update_me ]
