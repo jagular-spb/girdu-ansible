@@ -7,4 +7,5 @@
      - screen
      - yum-utils
      - NetworkManager-dispatcher-routing-rules
+     - python36
     update_cache: yes
