@@ -27,7 +27,6 @@
          persistent_state: present
          state: up
          ip :
-           dhcp: no
            gateway4: 37.18.89.1
            address:
              - 37.18.89.83/24
