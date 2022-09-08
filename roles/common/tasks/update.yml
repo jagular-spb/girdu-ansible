@@ -6,6 +6,8 @@
       when: update_me_bool| default (false) | bool
 
     - name: Update all packages
+      vars:
+        ansible_python_interpreter: "/usr/bin/python"
       yum:
         name: '*'
         state: latest
