@@ -27,7 +27,8 @@
          persistent_state: present
          state: up
          ip :
-           gateway4: 37.18.89.1
+           ipv6_disabled: yes
+           auto_gateway: no
            address:
              - 37.18.89.83/24
       # Specify the bond profile
