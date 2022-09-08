@@ -3,6 +3,7 @@
     - name: Update immediately Msg.
       debug:
         msg: "Got {{ update_me_bool | bool }}"
+      when: update_me_bool| default (false) | bool
 
     - name: Update all packages
       yum:

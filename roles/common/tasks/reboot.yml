@@ -7,7 +7,8 @@
 
     - name: Reboot immediately Msg.
       debug:
-       msg: "Got {{ reboot_me_bool | bool }}"
+        msg: "Got {{ reboot_me_bool | bool }}"
+      when: reboot_me_bool| default (false) | bool
 
     - name: Reboot immediately.
       shell: "sleep 5 && reboot"
