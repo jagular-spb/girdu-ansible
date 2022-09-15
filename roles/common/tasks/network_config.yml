@@ -23,16 +23,15 @@
 
     - name: "register_network_connections"
       set_fact:
-        network_connections: "{{ network_connection_item.results | map(attribute='ansible_facts.network_connection')| list | items2dict }}"
+        network_connections: "{{ network_connection_item.results | map(attribute='ansible_facts.network_connection')| list  }}"
 
 #    - name: "Run Network role"
 #      include_role:
 #        name: linux-system-roles.network
 
     - debug:
-        msg:
-          - "{{ hostvars[inventory_hostname].network_connections }}"
-#      with_items:
+        msg: "{{ hostvars[inventory_hostname].network_connections }}"
+#      wit h_items:
 #        - "{{ hostvars[inventory_hostname].network_connections }}"
 #  roles:
 #    -    linux-system-roles.network
