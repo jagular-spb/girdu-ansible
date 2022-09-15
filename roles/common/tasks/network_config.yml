@@ -21,6 +21,6 @@
     - debug:
         msg: "{{ item.ip.address[0] }}"
       with_items:
-        - "{{ hostvars[inventory_hostname].network_connections_connections }}"
+        - "{{ hostvars[inventory_hostname].network_connections }}"
 #  roles:
 #    -    linux-system-roles.network
