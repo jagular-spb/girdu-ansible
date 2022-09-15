@@ -4,6 +4,5 @@
   hosts: squid4.anysrv.local
   tasks:
     - debug:
-        msg:
-        - "{{ item.address }}"
+        msg: "{{ item.address[0] }}"
       with_items: "{{ hostvars[inventory_hostname].net_connections }}"
