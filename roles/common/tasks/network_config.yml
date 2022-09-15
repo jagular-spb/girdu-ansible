@@ -17,6 +17,7 @@
               address:
                 - "{{ item.ip.address[0] }}"
       with_items: "{{ hostvars[inventory_hostname].net_connections }}"
+      no_log: true
 
     - debug:
         msg:
