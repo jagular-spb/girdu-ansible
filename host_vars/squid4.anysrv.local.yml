@@ -1,4 +1,4 @@
-network_connections:
+net_connections:
   - name: ens256
     type: ethernet
     mac: 00:50:56:01:4e:d0
@@ -31,7 +31,7 @@ network_connections:
     state: up
     ip:
       auto6: no
-      auto_gateway: no
+      auto_gateway: yes
       address:
         - 37.18.89.57/24
 
