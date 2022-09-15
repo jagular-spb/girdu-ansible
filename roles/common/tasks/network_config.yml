@@ -22,7 +22,7 @@
 
     - debug:
         msg:
-        - "{{ network_connection_item }}"
+        - "{{ network_connection_item.results }}"
 #      with_items:
 #        - "{{ hostvars[inventory_hostname].network_connections }}"
 #  roles:
