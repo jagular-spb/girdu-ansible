@@ -4,7 +4,7 @@
   hosts: squid4.anysrv.local
   tasks:
     - set_fact:
-        network_connections:
+        - network_connections:
           - name: "{{ item.name }}"
             type: ethernet
             mac: "{{ item.mac }}"
