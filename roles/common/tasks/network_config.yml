@@ -3,7 +3,8 @@
   become_user: root
   hosts: squid4.anysrv.local
   tasks:
-    - set_fact:
+    - name: "register_network_connection"
+      set_fact:
         network_connection:
           - name: "{{ item.name }}"
             type: ethernet
@@ -20,9 +21,13 @@
       with_items: "{{ hostvars[inventory_hostname].net_connections }}"
       no_log: true
 
+    - name: "register_network_connections"
+      set_fact:
+        network_connections: "{{ network_connection.results | map(attribute='ansible_facts.network_connection') | list }}"
+
     - debug:
         msg:
-        - "{{ network_connection_item.results }}"
+          - "{{ hostvars[inventory_hostname].network_connections }}"
 #      with_items:
 #        - "{{ hostvars[inventory_hostname].network_connections }}"
 #  roles:
