@@ -16,7 +16,7 @@
               auto_gateway: "{{ item.ip.auto_gateway }}"
               address:
                 - "{{ item.ip.address[0] }}"
-        with_items: "{{ hostvars[inventory_hostname].net_connections }}"
+      with_items: "{{ hostvars[inventory_hostname].net_connections }}"
 
     - debug:
         msg: "{{ hostvars[inventory_hostname].network_connections }}"
