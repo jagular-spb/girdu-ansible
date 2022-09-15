@@ -23,7 +23,7 @@
 
     - name: "register_network_connections"
       set_fact:
-        network_connections: "{{ network_connection.results | map(attribute='ansible_facts.network_connection') | list }}"
+        network_connections: "{{ network_connection_item.results | map(attribute='ansible_facts.network_connection') | list }}"
 
     - debug:
         msg:
