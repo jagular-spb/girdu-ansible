@@ -9,13 +9,18 @@
            type: ethernet
            mac: "{{ item.mac }}"
            interface_name: "{{ item.name }}"
-           persistent_state: present
-           state: up
+           persistent_state: "{{ item.persistent_state }}"
+           state: "{{ item.state }}"
            ip:
              auto6: no
-             auto_gateway: no
+             auto_gateway: "{{ item.ip.auto_gateway }}"
              address:
-               - "{{ item.address }}"
+               - "{{ item.ip.address[0] }}"
        with_items: "{{ hostvars[inventory_hostname].net_connections }}"
-  roles:
-    -    linux-system-roles.network
+
+    - debug:
+        msg: "{{ item.ip.address[0] }}"
+      with_items:
+        - "{{ hostvars[inventory_hostname].network_connections_connections }}"
+#  roles:
+#    -    linux-system-roles.network
