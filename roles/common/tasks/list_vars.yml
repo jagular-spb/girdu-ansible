@@ -4,4 +4,4 @@
   hosts: squid4.anysrv.local
   tasks:
     - debug:
-        var=hostvars[inventory_hostname][network_connections]
+        var=hostvars[inventory_hostname.network_connections]
