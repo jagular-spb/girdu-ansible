@@ -25,10 +25,10 @@
       set_fact:
         network_connections: "{{ network_connection_item.results | map(attribute='ansible_facts.network_connection') | list }}"
 
-    - debug:
-        msg:
-          - "{{ hostvars[inventory_hostname].network_connections }}"
+#    - debug:
+#        msg:
+#          - "{{ hostvars[inventory_hostname].network_connections }}"
 #      with_items:
 #        - "{{ hostvars[inventory_hostname].network_connections }}"
-#  roles:
-#    -    linux-system-roles.network
+  roles:
+    -    linux-system-roles.network
