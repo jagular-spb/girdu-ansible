@@ -4,5 +4,5 @@
   hosts: squid4.anysrv.local
   tasks:
     - debug:
-        var = "{{ item.name }}"
+        msg: "{{ item.name }}"
       with_items: "{{ hostvars[inventory_hostname].network_connections }}"
