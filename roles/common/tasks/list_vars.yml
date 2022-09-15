@@ -1,0 +1,7 @@
+- name: playbook for configuring second interface
+  become: yes
+  become_user: root
+  hosts: squid4.anysrv.local
+  tasks:
+    - debug:
+        var=hostvars[inventory_hostname][network_connections]
