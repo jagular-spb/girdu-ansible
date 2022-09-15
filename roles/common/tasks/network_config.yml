@@ -19,7 +19,8 @@
       with_items: "{{ hostvars[inventory_hostname].net_connections }}"
 
     - debug:
-        msg: "{{ hostvars[inventory_hostname].network_connections }}"
+        msg:
+        - "{{ hostvars[inventory_hostname].network_connections }}"
 #      with_items:
 #        - "{{ hostvars[inventory_hostname].network_connections }}"
 #  roles:
