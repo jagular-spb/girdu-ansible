@@ -27,7 +27,7 @@
 
     - name: "Run Network role"
       include_role:
-        -    linux-system-roles.network
+        name: linux-system-roles.network
 
 #    - debug:
 #        msg:
