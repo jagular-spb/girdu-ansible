@@ -22,10 +22,10 @@
                   from: "{{ item.ip.address[0] }}"
                   table: "{{ item.ip.address[0].split('/')[0].split('.')[4] }}"
               route:
-                - network: {{ item.ip.address[0].split("/")[0] }}
-                  prefix: {{ item.ip.address[0].split("/")[1] }}
-                  gateway: {{ item.ip.gateway4 }}
-                  table: {{ item.ip.address[0].split("/")[0].split(".")[4] }}
+                - network: "{{ item.ip.address[0].split('/')[0] }}"
+                  prefix: "{{ item.ip.address[0].split('/')[1] }}"
+                  gateway: "{{ item.ip.gateway4 }}"
+                  table: "{{ item.ip.address[0].split('/')[0].split('.')[4] }}"
                   metric: 100
 
       register: network_connection_item
