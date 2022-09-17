@@ -23,6 +23,30 @@ net_connections:
       address:
         - 37.18.89.94/24
 
+  - name: ens193
+    type: ethernet
+    mac: 00:50:56:01:4e:d2
+    interface_name: ens193
+    persistent_state: present
+    state: up
+    ip:
+      auto6: no
+      auto_gateway: no
+      address:
+        - 37.18.89.97/24
+
+  - name: ens225
+    type: ethernet
+    mac: 00:50:56:01:4e:d4
+    interface_name: ens225
+    persistent_state: present
+    state: up
+    ip:
+      auto6: no
+      auto_gateway: no
+      address:
+        - 37.18.89.99/24
+
   - name: ens192
     type: ethernet
     mac: 00:50:56:01:4e:c9
@@ -35,18 +59,6 @@ net_connections:
       gateway4: 37.18.89.1
       address:
         - 37.18.89.57/24
-
-  - name: ens193
-    type: ethernet
-    mac: 00:50:56:01:4e:d2
-    interface_name: ens193
-    persistent_state: present
-    state: up
-    ip:
-      auto6: no
-      auto_gateway: no
-      address:
-        - 37.18.89.97/24
 
   - name: ens224
     type: ethernet
@@ -62,15 +74,5 @@ net_connections:
 
 
 
-  - name: ens225
-    type: ethernet
-    mac: 00:50:56:01:4e:d4
-    interface_name: ens225
-    persistent_state: present
-    state: up
-    ip:
-      auto6: no
-      auto_gateway: no
-      address:
-        - 37.18.89.99/24
+
 
