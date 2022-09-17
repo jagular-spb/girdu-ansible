@@ -30,7 +30,7 @@
 #        name: linux-system-roles.network
 
     - debug:
-        msg: "{{ hostvars[inventory_hostname].net_connections }}"
+        msg: "{{ hostvars[inventory_hostname].net_connections | type_debug }}"
 #      wit h_items:
 #        - "{{ hostvars[inventory_hostname].network_connections }}"
 #  roles:
