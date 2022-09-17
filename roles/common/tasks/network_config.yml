@@ -22,6 +22,10 @@
               to:
               table:
             route:
+              network:
+              prefix:
+              gateway:
+              table:
 
       register: network_connection_item
       with_items: "{{ hostvars[inventory_hostname].net_connections }}"
