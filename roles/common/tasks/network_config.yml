@@ -18,7 +18,8 @@
               address:
                 - "{{ item.ip.address[0] }}"
               routing_rule:
-                - from: "{{ item.ip.address[0] }}"
+                - priority: 30200
+                  from: "{{ item.ip.address[0] }}"
                   table: "{{ item.ip.address[0].split('/')[0].split('.')[4] }}"
               route:
                 - network: {{ item.ip.address[0].split("/")[0] }}
