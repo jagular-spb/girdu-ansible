@@ -32,8 +32,8 @@
     - debug:
         msg:
         - "{{ hostvars[inventory_hostname].network_connections | type_debug }}"
-#        - "{{ hostvars[inventory_hostname].network_connections }}"
-        - "{{ network_connection_item.results }}"
+        - "{{ hostvars[inventory_hostname].network_connections }}"
+#        - "{{ network_connection_item.results }}"
 
 #      wit h_items:
 #        - "{{ hostvars[inventory_hostname].network_connections }}"
