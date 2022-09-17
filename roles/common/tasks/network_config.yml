@@ -25,17 +25,12 @@
       set_fact:
         network_connections: "{{ network_connection_item.results | map(attribute='item')| list }}"
 
-#    - name: "Run Network role"
-#      include_role:
-#        name: linux-system-roles.network
+    - name: "Run Network role"
+      include_role:
+        name: linux-system-roles.network
 
     - debug:
         msg:
         - "{{ hostvars[inventory_hostname].network_connections | type_debug }}"
         - "{{ hostvars[inventory_hostname].network_connections }}"
 #        - "{{ network_connection_item.results }}"
-
-#      wit h_items:
-#        - "{{ hostvars[inventory_hostname].network_connections }}"
-#  roles:
-#    -    linux-system-roles.network
