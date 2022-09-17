@@ -29,8 +29,8 @@
       include_role:
         name: linux-system-roles.network
 
-    - debug:
-        msg:
-        - "{{ hostvars[inventory_hostname].network_connections | type_debug }}"
-        - "{{ hostvars[inventory_hostname].network_connections }}"
-#        - "{{ network_connection_item.results }}"
+#    - debug:
+#        msg:
+#        - "{{ hostvars[inventory_hostname].network_connections | type_debug }}"
+#        - "{{ hostvars[inventory_hostname].network_connections }}"
+##        - "{{ network_connection_item.results }}"
