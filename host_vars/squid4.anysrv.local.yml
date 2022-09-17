@@ -32,6 +32,7 @@ net_connections:
     ip:
       auto6: no
       auto_gateway: yes
+      gateway4: 37.18.89.1
       address:
         - 37.18.89.57/24
 
