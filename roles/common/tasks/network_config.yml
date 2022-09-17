@@ -30,7 +30,7 @@
 
       register: network_connection_item
       with_items: "{{ hostvars[inventory_hostname].net_connections }}"
-      no_log: true
+#      no_log: true
 
     - name: "register_network_connections"
       set_fact:
