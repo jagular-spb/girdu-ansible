@@ -8,6 +8,7 @@ net_connections:
     ip:
       auto6: no
       auto_gateway: no
+      gateway4: 37.18.89.1
       address:
         - 37.18.89.83/24
 
@@ -20,6 +21,7 @@ net_connections:
     ip:
       auto6: no
       auto_gateway: no
+      gateway4: 37.18.89.1
       address:
         - 37.18.89.94/24
 
@@ -32,6 +34,7 @@ net_connections:
     ip:
       auto6: no
       auto_gateway: no
+      gateway4: 37.18.89.1
       address:
         - 37.18.89.97/24
 
@@ -44,6 +47,7 @@ net_connections:
     ip:
       auto6: no
       auto_gateway: no
+      gateway4: 37.18.89.1
       address:
         - 37.18.89.99/24
 
