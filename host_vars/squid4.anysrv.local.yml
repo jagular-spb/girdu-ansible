@@ -48,17 +48,19 @@ net_connections:
       address:
         - 37.18.89.97/24
 
-  - name: ens224
-    type: ethernet
-    mac: 00:50:56:01:4e:cb
-    interface_name: ens224
-    persistent_state: present
-    state: up
-    ip:
-      auto6: no
-      auto_gateway: no
-      address:
-        - 10.10.35.249/24
+#  - name: ens224
+#    type: ethernet
+#    mac: 00:50:56:01:4e:cb
+#    interface_name: ens224
+#    persistent_state: present
+#    state: up
+#    ip:
+#      auto6: no
+#      auto_gateway: no
+#      address:
+#        - 10.10.35.249/24
+#
+
 
   - name: ens225
     type: ethernet
